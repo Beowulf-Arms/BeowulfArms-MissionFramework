@@ -1,0 +1,46 @@
+/////bmf-v2_2////
+///////// =====  Mission Description
+/*
+DO NOT change these settings unless you know what you are doing and have checked with an admin first.
+*/
+
+class CfgFunctions
+{
+	#include "bso\cfgFunctions.hpp"
+	#include "jebus\cfgFunctions.hpp"
+};
+#include "mission\meta.cpp" // <!-- Adds your mission meta data - go populate this!!!
+#include "bso\noti\noti_init.cpp"
+
+
+DisabledAI		= 1;						// <!-- Where 0 Fills empty playable slots with AI, 1 is They Don't fill the empty slots
+
+joinUnassigned		= 1;					// <!-- Where 0 forces joining players into the first empty slot, 1 leaves them to select their own
+disableChannels[]	={2,4,6};				// <!-- Restrict chat channels where (0=Global),(1=Side),(2=Command),(3=Group),(4=Vehicle),(5=Direct),(6=System)
+enableDebugConsole	= 1;					// <!-- Enable the debug console where (0=disabled),(1=Admins Only),(2=Everyone) DO NOT SET AS 2!
+showGPS			= 1;						// <!-- Allow GPS
+showCompass		= 1;						// <!-- Allow Compass
+showWatch		= 1;						// <!-- Allow Watch
+
+respawn		= 3;							// <!-- Sets respawn type. Leave at 3.
+respawnTemplates[] = {"BSO_Respawn_System", "MenuPosition"};// <!-- Enables the Beowulf Advacend Respawn System Enhanced
+respawnDelay	= 6;						// <!-- Delay between death and respawn. Should be more than 3 to enable a smooth transition // TODO: test big values
+respawnDialog	= 0;						// <!-- Displays dialogue when killed (leave this at 0)
+respawnOnStart	= -1;						// <!-- Do not respawn players on the start of a mission. Leave -1 unless using magic
+
+// edit this files to enable respawns
+#include "mission\respawns.hpp"
+
+
+
+///// Garbage Collector /////
+
+corpseManagerMode = 3; // Default: 0 for SP, 2 for MP. 3 for All_But_Respawned - All units are managed by the manager with exception of respawned
+corpseLimit = 30; // Default: 15
+corpseRemovalMinTime = 60; // seconds. Default: 10
+corpseRemovalMaxTime = 240; // seconds. Default: 3600
+wreckManagerMode = 2; // Default: 0 for SP, 2 for MP
+wreckLimit = 15; // seconds. Default: 15
+wreckRemovalMinTime = 10; // seconds. Default: 10
+wreckRemovalMaxTime = 60; // seconds. Default: 36000 (10 hours)
+minPlayerDistance = 50;

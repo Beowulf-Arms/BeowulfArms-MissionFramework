@@ -1,0 +1,630 @@
+/*
+////BL_TEMP_West v1.0////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+https://beowulfso.com/wiki/BSO_Loadouts
+
+BSO Loadout Template - Standard Western Force
+
+This template allows for quick creation of loadouts for your mission.
+Combined with the ORBAT template, you can quickly put together a standard platoon with weapon teams.
+
+Use "find and replace" on each of the  BL variables to replace that item in the loadouts.
+Constructive use of "find and replace" will allow you to add several uniforms to arrays and other wizardry.
+
+You are still able to quickly make changes, alterations and new classes to your faction.
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+ BL_RIFLE_WP								- Standard Rifle for most loadouts
+ BL_RAIL 							- Rail equipment. Usually IR Laser or torch
+ BL_OPTIC 								- Standard Optic
+ BL_RIFLE_MAG 						- Standard Rifle magazine
+ BL_RIFLE_TRACER_MAG				- Standard Rifle Tracer magazine
+
+ BL_SIDEARM_WP									- Standard Sidearm
+ BL_SIDEARM_MAG								- Standard Sidearm Magazine
+
+ BL_AUTORIFLE_WP								- Automatic Rifle
+ BL_AUTORIFLE_MAG							- Automatic Rifle Magazine
+
+ BL_RIFLE_UGL							- Standard Rifle with Underbarrel Grenade Launcher
+ BL_UGL_HE						- UGL HE grenade
+ BL_UGL_SMOKE_1					- UGL Smoke Greande. First Colour
+ BL_UGL_SMOKE_2				- UGL Smoke Grenade. Second Colour
+ BL_UGL_SMOKE_3				- UGL Smoke Grenade. Third Colour
+ BL_UGL_FLARE_1								- UGL Flare Grenade. First Colour
+ BL_UGL_FLARE_2							- UGL Flare Grenade. Second Colour
+
+ BL_MARK_RIFLE								- Marksman Rifle
+ BL_MARK_MAG							- Marksman Rifle magazine
+ BL_MARK_TRACER_MAG				- Marksman Rifle Tracer magazine
+ BL_MARK_OPTIC									- Marksman Rifle Optic
+ BL_MARK_BIPOD								- Marksman Rifle Bipod
+
+ BL_MG_WP								- Machinegun
+ BL_MG_MAG								- Machinegun Magazine
+
+ BL_LAT_WP								- Light AntiTank Launcher
+ BL_MAT_WP								- Medium AntiTank Launcher
+ BL_MAT_OPTIC							- MAT Optic
+ BL_MAT_MAG_AT							- MAT ammo - AT
+ BL_MAT_MAG_HE							- MAT ammo - HE
+ BL_HAT_WP						- Heavy AntiTank Launcher
+ BL_HAT_MAG									- HAT ammo
+ BL_SAM_WP							- Surface-to-Air Missile Launcher
+ BL_SAM_MAG									- SAM ammo
+
+ BL_CREW_WP									- Crew/Pilot Weapon
+ BL_CREW_MAG						- Crew/Pilot Magazine
+
+ BL_HG_FRAG								- BL_HG_FRAG Fragmentation.
+ BL_HG_SMOKE_STD									- BL_HG_FRAG Smoke. Standard Smoke
+ BL_HG_SMOKE_1								- BL_HG_FRAG Smoke. First Colour
+ BL_HG_SMOKE_2							- BL_HG_FRAG Smoke. Second Colour
+ BL_HG_SMOKE_3								- BL_HG_FRAG Smoke. Third Colour
+ BL_HG_SMOKE_4							- BL_HG_FRAG Smoke. Forth Colour
+
+
+
+ BL_UNIFORM									- Uniform
+ BL_VEST						- Vest
+ BL_HEADGEAR								- Headgear
+
+ BL_PILOT_UNIFORM						- Pilot Uniform
+ BL_PILOT_VEST								- Pilot Vest/Gear
+ BL_PILOT_HEADGEAR						- Pilot Headgear
+
+ BL_CREW_UNIFORM									- Vehicle Crew Uniform
+ BL_CREW_VEST								- Vehicle Crew Vest/Gear
+ BL_CREW_HEADGEAR								- Vehicle Crew Headgear
+
+ BL_MAP_TORCH						- Handheld Map Torch
+ BL_NVG									- Night Vision Goggles
+ BL_BINS									- BL_BINSs
+ BL_AT_MINE							- AntiTank Mine
+
+ BL_P_RADIO								- Personal Radio
+ BL_LR_RADIO								- Long Range Radio
+ BL_BP_RADIO								- Backpack Radio
+
+ BL_B_SML							- Backpack Small
+ BL_B_STD								- Backpack Standard
+ BL_B_LRG								- Backpack Large
+
+
+*/
+class blufor //Name of your faction referenced in the init call
+ {
+		name = "Beowulf Loadout Faction"; //Human name of your faction
+		
+		
+		class Base // Class Names
+		{
+			name = "Base";
+
+			items[] = {
+				"ACE_salineIV_500",
+				"BL_MAP_TORCH",
+				"ACE_fieldDressing",
+				"ACE_fieldDressing",
+				"ACE_morphine",
+				"ACE_tourniquet",
+				"ACE_quikclot",
+				"ACE_fieldDressing",
+				"ACE_fieldDressing"
+			};
+			personalRadios[] = {
+				"BL_P_RADIO"
+			};
+			assignedItems[] = {
+				"ItemMap",
+				"ItemCompass",
+				"ItemWatch"
+			};
+			uniform[] = {"BL_UNIFORM"};
+			vest[] = {"BL_VEST"};
+			headgear[] = {"BL_HEADGEAR"};
+			glasses[] = {};
+			nvg = "BL_NVG";
+			insignia = "";
+		};		
+		
+		class Rifleman: Base // Class Names
+		{
+			name = "Rifleman";
+			primaryWeapon = "BL_RIFLE_WP";
+			primaryWeaponItems[] = {"BL_RIFLE_MAG","BL_RAIL","BL_OPTIC"};
+			magazines[] = {
+				{"BL_RIFLE_MAG",5},
+				{"BL_RIFLE_TRACER_MAG",2},
+				{"BL_HG_FRAG",2},
+				"BL_HG_SMOKE_STD"
+			};
+			backpack = "BL_B_SML";
+			backpackMagazines[] = {
+				{"BL_RIFLE_MAG",4},
+				{"BL_RIFLE_TRACER_MAG",2},
+				{"BL_HG_FRAG",2},
+				"BL_HG_SMOKE_STD"
+			};
+			backpackItems[] = {
+				{"ACE_fieldDressing",2},
+				"ACE_morphine",
+				"ACE_tourniquet",
+				"ACE_quikclot",
+			};
+		};
+		
+		class RiflemanLAT: Rifleman
+		{
+			name = "Rifleman (LAT)";
+			launcher = "BL_LAT_WP";
+		};
+		
+		class SquadLeader: Rifleman {
+			name = "Squad Leader";
+			primaryWeapon = "BL_RIFLE_UGL";
+			primaryWeaponItems[] = {"BL_RIFLE_MAG","BL_UGL_HE","BL_RAIL","BL_OPTIC"};
+			handgun = "BL_SIDEARM_WP";
+			handgunItems[] = {"BL_SIDEARM_MAG"};
+			magazines[] = {
+				{"BL_RIFLE_MAG",5},
+				{"BL_RIFLE_TRACER_MAG",2},
+				{"BL_UGL_HE",2},
+				"BL_UGL_SMOKE_1",
+				{"BL_SIDEARM_MAG",2},
+				{"BL_HG_FRAG",2},
+				"BL_HG_SMOKE_STD"
+			};
+			items[] += {"ACE_MapTools"};
+			personalRadios[] += {"BL_LR_RADIO"};
+			assignedItems[] += {"ItemGPS"};
+			backpack = "BL_B_SML";
+			backpackMagazines[] = {
+				{"BL_RIFLE_MAG",4},
+				{"BL_RIFLE_TRACER_MAG",2},
+				{"BL_UGL_HE",3},
+				{"BL_UGL_SMOKE_1",4},
+				{"BL_UGL_SMOKE_2",3},
+				{"BL_UGL_SMOKE_3",2},
+				{"BL_SIDEARM_MAG",2},
+				{"BL_HG_FRAG",2},
+				{"BL_HG_SMOKE_STD",2},
+				{"BL_HG_SMOKE_3",2},
+				{"BL_HG_SMOKE_2",2},
+				{"BL_HG_SMOKE_4",2},
+				{"BL_UGL_FLARE_1",2}
+			};
+			backpackItems[] = {
+				{"ACE_fieldDressing",4},
+				{"ACE_morphine",2},
+				{"ACE_tourniquet",2},
+				{"ACE_epinephrine",2},
+				{"ACE_quikclot",2}
+			};
+			BL_BINSs = "BL_BINS";
+		};
+		
+
+		class PlatoonLeader: Squadleader
+		{
+			name = "Platoon Leader";
+			backpackItems[] = {
+				"BL_BP_RADIO",
+				{"ACE_fieldDressing",2},
+				"ACE_morphine",
+				"ACE_tourniquet",
+				"ACE_quikclot",
+			};
+			BL_BINSs = "BL_BINS";
+		};
+		
+		class TeamLeader: Rifleman
+		{
+			name = "TeamLeader";
+			handgun = "BL_SIDEARM_WP";
+			handgunItems[] = {"BL_SIDEARM_MAG"};
+			magazines[] = {
+				{"BL_RIFLE_MAG",5},
+				{"BL_RIFLE_TRACER_MAG",2},
+				{"BL_HG_FRAG",2},
+				"BL_HG_SMOKE_STD",
+				{"BL_SIDEARM_MAG",4}
+			};
+			items[] += {"ACE_MapTools"};
+			personalRadios[] = {"BL_LR_RADIO"};
+			assignedItems[] += {"ItemGPS"};
+			backpack = "BL_B_SML";
+			backpackItems[] = {
+				{"ACE_fieldDressing",6},
+				{"ACE_morphine",3},
+				{"ACE_tourniquet",3},
+				{"ACE_epinephrine",2},
+				{"ACE_quikclot",3}
+			};
+			BL_BINSs = "BL_BINS";
+		};
+		class Autorifleman: Rifleman 
+		{
+			name = "Autorifleman";
+			primaryWeapon = "BL_AUTORIFLE_WP";
+			primaryWeaponItems[] = {"BL_AUTORIFLE_MAG","BL_RAIL","BL_OPTIC"};
+			handgun = "";
+			handgunItems[] = {};
+			magazines[] = {
+				{"BL_AUTORIFLE_MAG",3},
+				{"BL_HG_FRAG",2},
+				"BL_HG_SMOKE_STD",
+				"BL_AUTORIFLE_MAG"
+			};
+			backpack = "BL_B_STD";
+			backpackMagazines[] = {
+				{"BL_AUTORIFLE_MAG",4}
+			};
+			backpackItems[] = {
+				{"ACE_fieldDressing",2},
+				"ACE_morphine",
+				"ACE_tourniquet",
+				"ACE_quikclot",
+				"ACE_SpareBarrel"
+			};
+		};
+		class AutoAsst: Rifleman
+		{
+			name = "AR Asst.";
+			backpack = "BL_B_STD";
+			backpackMagazines[] = {
+				{"BL_AUTORIFLE_MAG",4}
+			};
+			backpackItems[] = {
+				{"ACE_fieldDressing",2},
+				"ACE_morphine",
+				"ACE_tourniquet",
+				"ACE_quikclot",
+				"ACE_SpareBarrel"
+			};
+			BL_BINSs = "BL_BINS";
+		};
+
+		class Grenadier: Rifleman
+		{
+			name = "Grenadier";
+			primaryWeapon = "BL_RIFLE_UGL";
+			primaryWeaponItems[] = {"BL_RIFLE_MAG","BL_RAIL","BL_OPTIC"};
+			magazines[] = {
+				{"BL_RIFLE_MAG",5},
+				{"BL_RIFLE_TRACER_MAG",2},
+				{"BL_UGL_HE",3},
+				{"BL_UGL_SMOKE_1",1},
+				{"BL_UGL_SMOKE_2",1},
+				{"BL_UGL_SMOKE_3",1},
+				{"BL_HG_FRAG",2},
+				{"BL_HG_SMOKE_STD",1},
+				{"BL_UGL_FLARE_1",1}
+			};
+			backpack = "BL_B_SML";
+			backpackMagazines[] = {
+				{"BL_RIFLE_MAG",4},
+				{"BL_RIFLE_TRACER_MAG",2},
+				{"BL_UGL_HE",8},
+				{"BL_UGL_SMOKE_1",4},
+				{"BL_UGL_SMOKE_2",2},
+				{"BL_UGL_SMOKE_3",2},
+				{"BL_HG_FRAG",2},
+				{"BL_HG_SMOKE_STD",1},
+				{"BL_UGL_FLARE_1",2}
+			};
+			backpackItems[] = {
+				{"ACE_fieldDressing",2},
+				"ACE_morphine",
+				"ACE_tourniquet",
+				"ACE_quikclot",
+			};
+		};
+		
+		class TeamLeaderMG: TeamLeader
+		{
+			name = "TeamLeader - MG";
+			personalRadios[] += {"BL_LR_RADIO"};
+			backpack = "BL_B_STD";
+			backpackMagazines[] = {
+				{"BL_HG_SMOKE_STD",3},
+				{"BL_HG_SMOKE_2",1},
+				{"BL_HG_SMOKE_4",1},
+				{"BL_MG_MAG",3}
+			};
+		};
+
+		class Machinegunner: Rifleman
+		{
+			name = "Machinegunner";
+			primaryWeapon = "BL_MG_WP";
+			primaryWeaponItems[] = {"BL_MG_MAG","BL_RAIL"};
+			handgun = "BL_SIDEARM_WP";
+			handgunItems[] = {"BL_SIDEARM_MAG"};
+			magazines[] = {
+				{"BL_MG_MAG",2},
+				{"BL_SIDEARM_MAG",3},
+				{"BL_HG_FRAG",2},
+				"BL_HG_SMOKE_STD"
+			};
+			backpack = "BL_B_STD";
+			backpackMagazines[] = {
+				{"BL_MG_MAG",3}
+			};
+			backpackItems[] = {
+				{"ACE_fieldDressing",3},
+				"ACE_morphine",
+				"ACE_tourniquet",
+				"ACE_quikclot",
+				"ACE_SpareBarrel"
+			};
+		};
+
+		class MachinegunAsst: Rifleman
+		{
+			name = "MG Asst.";
+			backpack = "BL_B_STD";
+			backpackMagazines[] = {
+				{"BL_MG_MAG",3}
+			};
+			backpackItems[] = {
+				{"ACE_fieldDressing",3},
+				"ACE_morphine",
+				"ACE_tourniquet",
+				"ACE_quikclot",
+				"ACE_SpareBarrel"
+			};
+			BL_BINSs = "BL_BINS";
+		};
+		
+		class TeamLeaderMAT: TeamLeader
+		{
+			name = "TeamLeader - MAT";
+			personalRadios[] += {"BL_LR_RADIO"};
+			backpack = "BL_B_LRG";
+			backpackMagazines[] = {
+				{"BL_HG_SMOKE_STD",3},
+				{"BL_HG_SMOKE_2",1},
+				{"BL_HG_SMOKE_4",1},
+				{"BL_MAT_MAG_AT",1},
+				{"BL_MAT_MAG_HE",1}
+			};
+		};
+
+		class MediumAT: Rifleman
+		{
+			name = "MAT Gunner";
+			backpack = "BL_B_LRG";
+			backpackMagazines[] = {
+				{"BL_MAT_MAG_AT",2},
+				{"BL_MAT_MAG_HE",1}
+			};
+			launcher = "BL_MAT_WP";
+			launcherItems[] = {"BL_MAT_MAG_AT","BL_MAT_OPTIC"};
+		};
+		
+		class MediumATAsst: Rifleman
+		{
+			name = "MAT Asst.";
+			backpack = "BL_B_LRG";
+			backpackMagazines[] = {
+				{"BL_MAT_MAG_AT",2},
+				{"BL_MAT_MAG_HE",1}
+			};
+			BL_BINSs = "BL_BINS";
+		};
+
+		class HeavyAT: Rifleman
+		{
+			name = "HAT Gunner";
+			backpack = "BL_B_LRG";
+			backpackMagazines[] = {
+				{"BL_HAT_MAG",3}
+			};
+			launcher = "BL_HAT_WP";
+			launcherItems[] = {"BL_HAT_MAG"};
+		};
+		
+		class HeavyATAsst: Rifleman
+		{
+			name = "HAT Asst.";
+			backpack = "BL_B_LRG";
+			backpackMagazines[] = {
+				{"BL_HAT_MAG",3}
+			};
+			BL_BINSs = "BL_BINS";
+		};
+		
+		class AntiAir: Rifleman
+		{
+			name = "AA Gunner";
+			backpack = "BL_B_LRG";
+			backpackMagazines[] = {
+				{"BL_SAM_MAG",2}
+			};
+			launcher = "BL_SAM_WP";
+			launcherItems[] = {"BL_SAM_MAG"};
+		};
+		class AntiAirAsst: Rifleman
+		{
+			name = "AA Asst.";
+			backpack = "BL_B_LRG";
+			backpackMagazines[] = {
+				{"BL_SAM_MAG",2}
+				};
+			BL_BINSs = "BL_BINS";
+		};
+		
+		class ExpExpert: Rifleman
+		{
+			name = "Exp. Expert";
+			backpack = "BL_B_STD";
+			backpackMagazines[] = {
+				{"DemoCharge_Remote_Mag",2},
+				"SatchelCharge_Remote_Mag",
+				"BL_AT_MINE",
+				{"BL_HG_FRAG",2},
+				{"BL_HG_SMOKE_STD",2}
+			};
+			backpackItems[] = {
+				"ACE_Clacker",
+				"ACE_DefusalKit",
+				{"ACE_fieldDressing",2},
+				"ACE_morphine",
+				"ACE_tourniquet",
+				"ACE_quikclot",
+			};
+		};
+		
+		class Engineer: Rifleman
+		{
+			name = "Combat Engineer";
+			backpack = "BL_B_STD";
+			backpackMagazines[] = {
+				{"DemoCharge_Remote_Mag",2},
+				{"BL_HG_FRAG",2},
+				{"BL_HG_SMOKE_STD",2}
+			};
+			backpackItems[] = {
+				"ACE_Clacker",
+				"ACE_DefusalKit",
+				"ToolKit",
+				"ACE_wirecutter",
+				{"ACE_fieldDressing",2},
+				"ACE_morphine",
+				"ACE_tourniquet",
+				"ACE_quikclot",
+			};
+		};
+		
+		class Medic: Rifleman
+		{
+			name = "Combat Medic";
+			backpack = "BL_B_STD";
+			backpackMagazines[] = {
+				{"BL_HG_SMOKE_STD",4},
+				{"BL_HG_SMOKE_2",4}
+			};
+			backpackItems[] = {
+				{"ACE_salineIV_500",10},
+				{"ACE_fieldDressing",50},
+				{"ACE_tourniquet",10},
+				{"ACE_quikclot",20},
+				{"ACE_epinephrine",10},
+				{"ACE_morphine",10},
+				{"ACE_atropine",10}
+			};
+		};
+
+		class JTAC: SquadLeader
+		{
+			name = "JTAC";
+			magazines[] = {
+				{"BL_RIFLE_MAG",5},
+				{"BL_RIFLE_TRACER_MAG",2},
+				{"BL_UGL_HE",2},
+				"BL_UGL_SMOKE_1",
+				{"BL_SIDEARM_MAG",2},
+				{"BL_HG_FRAG",2},
+				"BL_HG_SMOKE_STD"
+				"Laserbatteries"
+			};
+			backpack = "BL_B_LRG";
+			backpackMagazines[] = {
+				{"BL_UGL_HE",4},
+				{"BL_UGL_SMOKE_1",2},
+				{"BL_UGL_SMOKE_2",6},
+				{"BL_UGL_SMOKE_3",4},
+				{"BL_UGL_FLARE_1",2},
+				{"BL_UGL_FLARE_2",2},
+				{"BL_HG_SMOKE_2",2},
+				{"BL_HG_SMOKE_3",2},
+				{"BL_HG_SMOKE_4",2},
+				{"Laserbatteries",1}
+			};
+			backpackItems[] = {
+				"BL_BP_RADIO"
+			};
+			BL_BINSs = "Laserdesignator";
+		};
+
+		class Marksman: Rifleman
+		{
+			name = "Marksman";
+			primaryWeapon = "BL_MARK_RIFLE";
+			primaryWeaponItems[] = {"BL_MARK_MAG","BL_MARK_OPTIC","BL_MARK_BIPOD","BL_RAIL"};
+			handgun = "BL_SIDEARM_WP";
+			handgunItems[] = {"BL_SIDEARM_MAG"};
+			magazines[] = {
+				{"BL_MARK_MAG",5},
+				{"BL_MARK_TRACER_MAG",2},
+				{"BL_SIDEARM_MAG",3},
+				{"BL_HG_FRAG",2},
+				"BL_HG_SMOKE_STD"
+			};
+			items[] += {"ACE_RangeCard"};
+			assignedItems[] += {"ItemGPS"};
+			backpack = "BL_B_SML";
+			backpackMagazines[] = {
+				{"BL_SIDEARM_MAG",3},
+				{"BL_HG_FRAG",2},
+				"BL_HG_SMOKE_STD"
+				};
+			backpackItems[] = {
+				{"ACE_fieldDressing",2},
+				"ACE_morphine",
+				"ACE_tourniquet",
+				"ACE_quikclot",
+				};
+			BL_BINSs = "Rangefinder";
+		};
+
+		class Pilot: Base
+		{
+			name = "Pilot";
+			primaryWeapon = "BL_CREW_WP";
+			primaryWeaponItems[] = {"BL_CREW_MAG","BL_RAIL"};
+			handgun = "";
+			handgunItems[] = {};
+			magazines[] = {
+				{"BL_CREW_MAG",4},
+				{"BL_HG_SMOKE_3",1},
+				{"BL_HG_SMOKE_4",1}
+			};
+			assignedItems[] += {"ItemGPS"};
+			backpack = "BL_B_SML";
+			backpackItems[] = {"BL_BP_RADIO"};
+			uniform[] = {"BL_PILOT_UNIFORM"};
+			vest[] = {"BL_CREW_VEST"};
+			headgear[] = {"BL_PILOT_HEADGEAR"};
+			nvg = "BL_NVG";
+		};
+
+		class Crew: Base
+		{
+			name = "Crewman";
+			primaryWeapon = "BL_CREW_WP";
+			primaryWeaponItems[] = {"BL_CREW_MAG","BL_RAIL"};
+			magazines[] = {
+				{"BL_CREW_MAG",4},
+				{"BL_HG_SMOKE_3",1},
+				{"BL_HG_SMOKE_STD",2}
+			};
+			assignedItems[] += {"ItemGPS"};
+			uniform[] = {"BL_CREW_UNIFORM"};
+			vest[] = {"BL_CREW_VEST"};
+			headgear[] = {"BL_CREW_HEADGEAR"};
+			nvg = "BL_NVG";
+		};
+		class CrewC: Crew
+		{
+			name = "Crew Commander";
+			items[] += {"ACE_MapTools"};
+			backpack = "BL_B_SML";
+			backpackItems[] = {"BL_BP_RADIO"};
+			BL_BINSs = "BL_BINS";
+		};
+	};
