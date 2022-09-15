@@ -30,3 +30,6 @@ if (hasInterface) then {
 
 // call player scripts
 [] execVM "mission\custom_scripts.sqf";
+
+// executes bso AI Init on all units spawned
+["CAManBase", "init", {[_this select 0] call bso_fnc_ai_init}, true, [], true] call CBA_fnc_addClassEventHandler;

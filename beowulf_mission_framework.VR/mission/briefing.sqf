@@ -101,14 +101,33 @@
 
 ] call FHQ_fnc_ttAddBriefing;
 
-/*
- * Language definitions have been moved to mission\acre.sqf
- */
-
 
 // Mission end conditions. By editing the "end" and "loser" configs in meta.cpp you can have the admin end the mission with a debrief.
 ["Mission Success", "end1", true] call bso_admin_fnc_addMissionEnd;
 ["Mission Failed", "loser", false] call bso_admin_fnc_addMissionEnd;
+
+// Briefing Headgear Swap - Swaps headgear for pre-gameon, and returns to loadout headgear after. Second array is a list of classnames excluded. See BSO\fn_headgearSwap.sqf for more info.
+ [["H_Beret_02","H_Beret_Colonel"],["B_Pilot_F","B_Crew_F"]] call bso_fnc_headGearSwap;
+
+if (hasInterface) then {
+	[] spawn {
+		waitUntil {trigger_BSOstart};
+
+
+		// Below is a quick "intro" call. Which uses the below arrays to create a intro text crawl on GAMEON. Edit these lines as required.
+		[ 
+			["Beowulf Mission Framework","font = 'PuristaSemiBold'"],
+			["","<br/>"],
+			["Author","font = 'PuristaMedium'"],
+			["","<br/>"],
+			['"Dont be a dick!" - Beowulf Motto',"font = 'PuristaLight'"]
+		]  execVM "\a3\missions_f_bootcamp\Campaign\Functions\GUI\fn_SITREP.sqf";
+			
+
+	};
+
+};
+
 
 //Below is an example on how you can make only certain factions see certain markers.
 /*
@@ -137,3 +156,6 @@ if (!isDedicated) then
 	};
 };
 */
+
+
+
