@@ -14,7 +14,7 @@
 //		_shorttitle - REQUIRED?. Title seen on map if linked to markers, or 3d view.
 //		_target - marker or object defined location of the task
 //		_initial - Task status. For example "assigned", "created", "succeeded", "failed", "canceled"
-//		_type - Type of task which dictates the icons used on the map and task list.
+//		_type - Type of task which dictates the icons used on the map and task list. https://community.bistudio.com/wiki/Arma_3:_Task_Framework#Task_icons
 //
 //
 //	The following line is used to mark an objective as successful. Note how only the server calls the task change. More info can be found in the FHQ Guide.

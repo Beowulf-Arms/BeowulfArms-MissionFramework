@@ -67,7 +67,9 @@ if (local _unit && !isPlayer _unit) then { // Runs where unit is local
 	_unit addEventHandler ["Killed", {
 		params ["_unit", "_killer", "_instigator", "_useEffects"];
 		
-		{_unit removeMagazine _x} forEach magazines _unit;
+		//Below will give a 50/50 chance of removing each magazine. The commented out line below will remove all magazines
+		{if (selectRandom [TRUE,FALSE]) then {_unit removeMagazine _x}} forEach magazines _unit;
+		//{_unit removeMagazine _x} forEach magazines _unit;
 		_unit removeItems  "FirstAidKit";
 		_unit removeItems  "ACE_fieldDressing";
 		_unit removeItems  "ACE_morphine";

@@ -9,7 +9,7 @@
 Use the fields below to set your mission attributes. For assistance speak to an admin or see the BI wiki for Description.ext
 */
 
-overviewText = "0-60<br />COOP<br />Standard<br />Spectator Box<br />Advanced Medical<br />Brief description about the mission<br />Author";
+overviewText = "0-60<br />COOP<br />Standard<br />Spectator<br />Brief description about the mission<br />Author";
 
 /*
 
