@@ -97,7 +97,12 @@
 				Air Net - CH2 LR
 				"],
   ["Notes","Additional notes about the mission and any tips you want to give the players should go here."],
-  ["Credits","AUTHOR"]
+  ["Mission Maker Notes","Created By: XXXXXXXXX
+					<br/>
+					<br/>
+	Use this area to deliver your direct intent to the mission leader in deliberate terms. 
+  
+  "]
 
 ] call FHQ_fnc_ttAddBriefing;
 
