@@ -1,4 +1,4 @@
-/////bmf-v2_2////
+/////bmf-v1////
 // Headgear Swap script
 // 
 // Swaps loadout assigned headgear with beret during pre-gameon step. Then adds headgear at GAMEON.

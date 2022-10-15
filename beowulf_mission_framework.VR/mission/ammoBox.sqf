@@ -8,6 +8,8 @@ if (isServer) then {
 	clearWeaponCargoGlobal _box;
 	clearItemCargoGlobal _box;
 	clearItemCargoGlobal _box;
+	// Increase the size of a box
+	//_box setMaxLoad 10000; 
 	
 	[_box, true, [0,1,0], 0] call ace_dragging_fnc_setCarryable; 
 	[_box, true, [0,1,0], 0] call ace_dragging_fnc_setDraggable; 

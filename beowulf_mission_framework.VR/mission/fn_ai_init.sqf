@@ -1,4 +1,4 @@
-/////bmf-v2_2////
+/////bmf-v1////
 
 //	Beowulf AI Init Script v2
 //
