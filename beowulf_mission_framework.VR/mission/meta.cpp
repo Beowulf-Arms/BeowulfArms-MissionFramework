@@ -36,8 +36,8 @@ Author 															//<!--- This is you!!
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-overviewPicture = "mission\beo_frame.jpg.jpg";								// <!-- Mission Picture (Use jpg at 1024x512 for quality/compression)
-loadScreen = "mission\beo_frame.jpg.jpg";									// <!-- Loading Screen Picture (See above)
+overviewPicture = "mission\beo_frame.jpg";								// <!-- Mission Picture (Use jpg at 1024x512 for quality/compression)
+loadScreen = "mission\beo_frame.jpg";									// <!-- Loading Screen Picture (See above)
 OnLoadName = "Beowulf Framework";									// <!-- Mission Name (Just Text)
 OnLoadMission = "Beowulf Mission framework template"; 			// <!-- A VERY brief overview (Copy from above)
 
