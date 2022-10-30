@@ -45,7 +45,7 @@ if (local _unit && !isPlayer _unit) then { // Runs where unit is local
 	// Loadouts - Each case defines a classname of the type of unit. This is how the script knows which loadout to apply to every unit. For example, apply he Autorifleman Loadout to the OpFor Autorifleman in the group.
 	// You can add as many classes as you require
 /*
-	_type = typeOf ;
+	_type = typeOf _unit;
 	_rifleman = selectRandom ["Rifleman","Rifleman2"];
 	switch _type do 
 	{
