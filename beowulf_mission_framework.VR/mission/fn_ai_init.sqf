@@ -2,6 +2,8 @@
 
 //	Beowulf AI Init Script v2
 //
+//	THIS FUNCTION AUTOMATICALLY APPLIES TO ALL AI UNITS. YOU DO NOT NEED TO DO ANYTHING MANUALLY!
+//
 // Use this script to assign your own loadouts to AI units and apply any other changes to your AI. 
 // By using this script you can avoid add init lines to every member of a group
 // This script is also compatible with the JEBUS modules, so your respawned AI units will be spawned with the new loadouts
@@ -11,12 +13,14 @@
 // - Add Beowulf Paraflare 
 // - AI Stripper
 //
+// This function automatically runs on all units created in the editor or spawned. However, you can manually run it by using the commands below
 //
-// Use the execVM line below on the group leader. 
-// [this] execVM "mission\bso_ai_init.sqf";
+//
+// To manually call, use the execVM line below on the group leader. 
+// [this] call bso_fnc_ai_init;
 //
 // Use this line when using the JEBUS module, as _proxyThis refers to this
-// [_proxyThis] execVM "mission\bso_ai_init.sqf";
+// [_proxyThis] call bso_fnc_ai_init;
 
 _unit = _this select 0;
 if (local _unit && !isPlayer _unit) then { // Runs where unit is local
