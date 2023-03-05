@@ -9,14 +9,14 @@ enableSaving [false,false];
 diag_log format ["###### %1 ######", missionName];
 diag_log [diag_frameno, diag_ticktime, time, "Executing init.sqf"];
 
+// safety. Needs to run first to setup the game-on public variables.
+[] call bso_fnc_safety;
+
 ////// ====	Taskmaster
 execVM "mission\briefing.sqf";
 
 // ACRE
 execVM "mission\acre.sqf";
-
-// safety
-[] call bso_fnc_safety;
 
 // slows down time until gameon
 [] call bso_fnc_timeSlow;
