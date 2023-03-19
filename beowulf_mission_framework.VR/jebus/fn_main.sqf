@@ -174,6 +174,7 @@ _waypointList = [_unitGroup] call jebus_fnc_saveWaypoints;
 {
     if ( (vehicle _x) isKindOf "LandVehicle" || (vehicle _x) isKindOf "Air" || (vehicle _x) isKindOf "Ship") then {
 		_currentVehicle = vehicle _x;
+        _currentVehicle enableSimulationGlobal false;
         _vehicleList append [typeOf _currentVehicle];
         _vehicleHitpointsDamageList append [getAllHitpointsDamage _currentVehicle];
         _vehicleHealthList append [damage _currentVehicle];
@@ -198,21 +199,20 @@ _waypointList = [_unitGroup] call jebus_fnc_saveWaypoints;
 		_vehicleVarNameList append [vehicleVarName _currentVehicle];
        
         _tmpCrew = crew _currentVehicle;
-        sleep 0.1;
-        deleteVehicle _currentVehicle;
-        sleep 0.1;
         _tmpCrewList = [];
         _tmpCrewInventoryList = [];
         _tmpCrewSkillList = [];
 		_tmpCrewVarNameList = [];
         {
-            _tmpCrewList append [typeOf (vehicle _x)];
+            _tmpCrewList append [typeOf  _x];
             _tmpCrewInventoryList append [getUnitLoadout _x];
             _tmpCrewSkillList append [skill _x];
 			_tmpCrewVarNameList append [vehicleVarName _x];
-            deleteVehicle _x;
+            _currentVehicle deleteVehicleCrew _x;
             sleep 0.1
         } forEach _tmpCrew;
+        
+        deleteVehicle _currentVehicle;
  
         _crewList set [(count _vehicleList - 1), _tmpCrewList];
         _crewInventoryList set [(count _vehicleList - 1), _tmpCrewInventoryList];
