@@ -1,4 +1,4 @@
-// [this] execVM "mission\ammoBox.sqf"; // put this in the init of the box
+// [this] execVM "mission\loadouts\ammoBox.sqf"; // put this in the init of the box
 
  private["_box"];
  _box = _this select 0;
