@@ -17,4 +17,10 @@ class bso
 		file = "mission";
 		class ai_init {};
 	};
+	class utility
+	{
+		file = "bso\utility";
+		class make_intel_object {};
+		class add_interaction {};
+	}
 };
